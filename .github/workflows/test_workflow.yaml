@@ -1,0 +1,25 @@
+name: Called Workflow
+
+on:
+  workflow_call:
+    inputs:
+      action:
+        description: 'Github Action'
+        required: true
+        type: string
+        default: "example"
+
+
+jobs:
+  Test_Things:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump text for baseline
+        run: |
+          echo "This will dump the text for baseline"
+          echo "input: ${{ github.event.inputs.action }}"
+          echo "PR number: ${{ github.event.pull_request.number }}"
+          echo "Event action: ${{ github.event.action }}"
+          echo "PR head SHA: ${{ github.event.pull_request.head.sha }}"
+          echo "Workflow run ID: ${{ github.run_id }}"
+          echo "Run attempt: ${{ github.run_attempt }}"
