@@ -12,10 +12,13 @@ runs:
     - name: Dump text for baseline
       shell: bash
       run: |
-        echo "This will dump the text for baseline"
-        echo "input: ${{ github.event.inputs.action }}"
-        echo "PR number: ${{ github.event.pull_request.number }}"
-        echo "Event action: ${{ github.event.action }}"
-        echo "PR head SHA: ${{ github.event.pull_request.head.sha }}"
-        echo "Workflow run ID: ${{ github.run_id }}"
-        echo "Run attempt: ${{ github.run_attempt }}"
+         echo "----------------------"
+         echo "This is the INPUT received for this action"
+         echo "input: ${{ github.event.inputs.action }}"
+         echo "----------------------"
+         echo "These are pulled from github.event... "
+         echo "PR number: ${{ github.event.pull_request.number }}"
+         echo "Event action: ${{ github.event.action }}"
+         echo "PR head SHA: ${{ github.event.pull_request.head.sha }}"
+         echo "Workflow run ID: ${{ github.run_id }}"
+         echo "Run attempt: ${{ github.run_attempt }}"
