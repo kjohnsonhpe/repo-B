@@ -14,10 +14,11 @@ runs:
       run: |
          echo "----------------------"
          echo "This is the INPUT received for this ACTION"
-         echo "input: ${{ inputs.action }}"
+         echo "inputs.action: ${{ inputs.action }}"
          echo "----------------------"
          echo "This is the INPUT received for this WORKFLOW"
-         echo "input: ${{ github.event.inputs.some_string }}"
+         echo "github.event.inputs.some_string: ${{ github.event.inputs.some_string }}"
+         echo "inputs.some_string: ${{ inputs.some_string }}"
          echo "----------------------"
          echo "These are pulled from github.event... "
          echo "PR number: ${{ github.event.pull_request.number }}"
