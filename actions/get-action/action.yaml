@@ -10,6 +10,7 @@ runs:
   using: composite
   steps:
     - name: Dump text for baseline
+      shell: bash
       run: |
         echo "This will dump the text for baseline"
         echo "input: ${{ github.event.inputs.action }}"
